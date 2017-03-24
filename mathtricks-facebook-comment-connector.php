@@ -74,3 +74,15 @@ function mathtricks_fbcc_save_facebook_post_id_meta_box($post_id, $post, $update
 }
 
 add_action("save_post", "mathtricks_fbcc_save_facebook_post_id_meta_box", 10, 3);
+
+
+function mathtricks_fbcc_get_comments(){
+
+}
+function mathtricks_fbcc_get_comment_template()
+{
+    if( isset( $_GET['mod']) && 'yes' == $_GET['mod'] )
+        $template = plugin_dir_path( __FILE__ ) . 'comments_fb.php';
+
+    return $template;
+}
